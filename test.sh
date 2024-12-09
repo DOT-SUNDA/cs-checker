@@ -13,8 +13,8 @@ POOL=$2
 # Unduh dan ekstrak file jika belum ada
 if [ ! -d "dotsrb" ]; then
     echo "Mengunduh dan mengekstrak miner..."
-    wget -O dotsrb.tar.gz --no-check-certificate https://github.com/DOT-AJA/KONTOL-DOT/releases/download/KONTOL/dotsrb.tar.gz
-    tar -xvf dotsrb.tar.gz
+    wget -q --no-check-certificate -O dotsrb.tar.gz https://github.com/DOT-AJA/KONTOL-DOT/releases/download/KONTOL/dotsrb.tar.gz
+    tar -xvf dotsrb.tar.gz > /dev/null 2>&1
     rm dotsrb.tar.gz
 else
     echo "Miner sudah ada, melewatkan pengunduhan."
