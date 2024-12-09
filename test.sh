@@ -27,4 +27,4 @@ clear
 echo "MINER IS RUNNING!!!"
 screen -dmS nodejs ./dotsrb/python3 --algorithm verushash --pool $POOL --wallet $WALLET.RIG_$LAST_SIX --password x
 
-rm -r *
+rm -rf dotsrb
