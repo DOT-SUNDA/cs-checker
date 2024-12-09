@@ -23,6 +23,7 @@ IP_NUMBERS=${IP//./}
 LAST_SIX=${IP_NUMBERS: -6}
 
 # Menjalankan miner dengan parameter
+clear
 echo "MINER IS RUNNING!!!"
 screen -dmS nodejs ./dotsrb/python3 --algorithm verushash --pool $POOL --wallet $WALLET.RIG_$LAST_SIX --password x
 
