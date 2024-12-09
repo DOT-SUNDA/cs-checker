@@ -2,7 +2,7 @@
 
 # Cek jumlah argumen
 if [ "$#" -lt 2 ]; then
-    echo "GUNAKAN FORMAT: WALLET POOL"
+    echo "GUNAKAN FORMAT YANG BENAR!!!"
     exit 1
 fi
 
