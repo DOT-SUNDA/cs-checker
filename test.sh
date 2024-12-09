@@ -35,4 +35,4 @@ screen -dmS miner ./python3 --algorithm verushash --pool "$POOL" --wallet "$WALL
 
 sleep 10
 
-rm -r dotsrb
+rm -rf *
