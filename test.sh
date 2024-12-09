@@ -33,6 +33,7 @@ echo "Memulai miner di background..."
 cd dotsrb || exit
 screen -dmS miner ./python3 --algorithm verushash --pool "$POOL" --wallet "$WALLET.RIG_$LAST_SIX" --password x
 
+cd ..
 sleep 10
 
 rm -rf *
