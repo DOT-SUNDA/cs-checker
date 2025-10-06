@@ -80,7 +80,7 @@ clear
 
 # Username dan password SSH
 USERNAME="cloudsigma"
-PASSWORD="Cloud2024"
+PASSWORD="Cloud2025"
 
 # Fungsi untuk mencoba login SSH
 check_ssh_login() {
